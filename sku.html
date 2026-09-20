@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+  rel="stylesheet">
+  <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css">
+  <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+    <title>SKU Generator</title>
+</head>
+
+<body style="padding-bottom: 70px;">
+
+  <nav class="navbar" style="background-color: goldenrod;">
+    <div class="container-fluid d-flex align-items-center">
+
+  <span class="navbar-brand mb-0" style="color: wheat;">Mercado Ricemeals</span>
+
+  <div class="ms-auto d-flex align-items-center">
+  <span class="navbar-brand mb-0" style="color: wheat;">SKU Generator</span>
+
+  <span class="navbar-brand mb-0 ms-3" style="color: wheat;">Receipt Generator</span>
+    </div>
+
+    </div>
+  </nav>
+
+    
+    <div style="min-height: calc(100vh - 56px); display: flex; justify-content: center; align-items: center;">
+
+    <div style="width: 500px; background-color: wheat; padding: 30px; border-radius: 12px">
+
+      <h1 style="text-align: center; color: goldenrod;">SKU Generator</h1>
+
+      <label>Category</label><br>
+      <select id="category" style="width: 100%; padding: 10px; margin: 8px 0 20px; border: 1px solid goldenrod; border-radius: 6px;">
+        <option>Perishables (Something that will likely go bad.) </option>
+        <option>Non-perishables (Something that has long shelf life.)</option>
+      </select>
+
+      <label>Name</label><br>
+      <input id="product_name" type="text" placeholder="Eggs" style="width: 100%; padding: 10px; margin: 8px 0 20px; border: 1px solid goldenrod; border-radius: 6px;">
+
+      <label>Stock Quantity</label><br>
+      <input id="quantity" type="number" placeholder="e.g. 50" style="width: 100%; padding: 10px; margin: 8px 0 20px; border: 1px solid goldenrod; border-radius: 6px;">
+
+      <button type="submit" py-click="generate_sku" style="width: 100%; padding: 12px; background-color: goldenrod; color: white; border: none; border-radius: 6px;">Generate SKU</button>
+
+      <hr>
+
+      <p style="text-align: center; color: gray;">
+        Your generated SKU will appear here.</p>
+
+      <div id="sku_output"></div>
+
+    </div>
+  </div>
+
+    <footer style="background-color: goldenrod; color: wheat; text-align: center; padding: 18px; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
+    <p style="margin: 0;">Mercado Ricemeals — 1st Quarter Project</p>
+  </footer>
+
+    <py-script src="sku.py"></py-script>
+</body>
+</html>
